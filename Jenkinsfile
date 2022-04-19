@@ -2,6 +2,10 @@ pipeline {
   agent any
   stages {
     stage('Check Maven Version') {
+      agent any
+      environment {
+        PATH = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/'
+      }
       steps {
         sh 'bat mvn --version'
       }
@@ -13,5 +17,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    PATH = '/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin/'
   }
 }
