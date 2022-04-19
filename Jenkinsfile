@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Check Maven Version') {
       steps {
-        sh 'sh mvn --version'
+        sh 'mvn --version'
       }
     }
 
