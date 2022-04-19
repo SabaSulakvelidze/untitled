@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Check Maven Version') {
       steps {
-        sh 'cmd mvn --version'
+        sh 'bat mvn --version'
       }
     }
 
