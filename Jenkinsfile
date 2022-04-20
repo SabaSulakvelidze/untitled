@@ -1,14 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Check Maven Version') {
-      agent any
+    stage('Check version') {
       steps {
-        sh 'cmd mvn --version'
+        sh 'mvn --version'
       }
     }
 
-    stage('Status Check') {
+    stage('the end') {
       steps {
         echo 'Finito'
       }
