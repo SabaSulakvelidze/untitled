@@ -2,9 +2,20 @@ pipeline {
   agent any
   stages {
     stage('Check version') {
-      agent any
-      steps {
-        bat 'mvn -version'
+      parallel {
+        stage('Check version') {
+          agent any
+          steps {
+            bat 'mvn -version'
+          }
+        }
+
+        stage('Build Maven') {
+          steps {
+            bat 'mvn clean deploy'
+          }
+        }
+
       }
     }
 
